@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["a2new@yandex.ru"]
   gem.description   = %q{Unofficial Mendeley strategy for OmniAuth 1.0}
   gem.summary       = %q{Unofficial Mendeley strategy for OmniAuth 1.0}
-  gem.homepage      = "https://github.com/hedgesky/omniauth-mendeley"
+  gem.homepage      = "https://github.com/yortz/omniauth-mendeley"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
