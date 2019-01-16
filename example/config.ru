@@ -1,17 +1,14 @@
 require 'bundler'
 require 'sinatra'
-require 'omniauth-mendeley'
+require 'omniauth-mendeley_oauth2'
+require 'dotenv/load'
 
 use Rack::Session::Cookie
 
 # to register a Mendeley app sign up at http://mendeley.com/,
 # then login with given credentials at http://dev.mendeley.com
-
-MENDELEY_CONSUMER_KEY = 'your_app_key'
-MENDELEY_CONSUMER_SECRET = 'your_app_secret'
-
 use OmniAuth::Builder do
-  provider :mendeley, MENDELEY_CONSUMER_KEY, MENDELEY_CONSUMER_SECRET
+  provider :mendeley, ENV['MENDELEY_CONSUMER_KEY'], ENV['MENDELEY_CONSUMER_SECRET'], client_options: { redirect_uri: "http://127.0.0.1:9292/auth/mendeley/callback" }
 end
 
 class App < Sinatra::Base
@@ -27,3 +24,5 @@ class App < Sinatra::Base
 end
 
 run App.new
+
+# shotgun --server=thin --port=9292 config.ru
