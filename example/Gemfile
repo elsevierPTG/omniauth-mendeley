@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
+gem 'shotgun', '~> 0.9.2'
+gem 'sinatra', '~> 2.0.5'
+gem 'thin', '~> 1.7.2'
+gem 'dotenv', '~> 2.6.0'
 gem 'omniauth-mendeley_oauth2', :path => '../'
