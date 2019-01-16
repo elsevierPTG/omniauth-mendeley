@@ -13,7 +13,7 @@ module OmniAuth
       option :client_options, {
         :site           => 'https://mix.mendeley.com',
         :token_path     => '/oauth/token/',
-        :authorize_path => '/oauth/authorize/',
+        :authorize_path => '/oauth/v2/authorize/',
       }
 
       uid do
@@ -42,7 +42,6 @@ module OmniAuth
       def raw_info
         @raw_info ||= MultiJson.decode(access_token.get('/profiles/me').body)
       end
-
 
       def authorize_params
         super.tap do |params|
