@@ -13,7 +13,7 @@ module OmniAuth
       option :client_options, {
         :site           => 'https://mix.mendeley.com',
         :token_path     => '/oauth/token/',
-        :authorize_path => '/oauth/v2/authorize/',
+        :authorize_path => '/oauth/authorize/',
       }
 
       uid do
